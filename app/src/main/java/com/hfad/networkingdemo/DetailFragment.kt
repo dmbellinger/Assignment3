@@ -35,6 +35,7 @@ class DetailFragment : Fragment() {
 
             return
         }
+        hero_id = DetailFragmentArgs.fromBundle(bundle).heroId
 
     }
     override fun onCreateView(
