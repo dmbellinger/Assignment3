@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 var heroList : ArrayList<Hero> = ArrayList()
+var movieList : ArrayList<Movie> = ArrayList()
 
 class RecyclerAdapter(val context: Context,  var navController: NavController) : RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>() {
 
