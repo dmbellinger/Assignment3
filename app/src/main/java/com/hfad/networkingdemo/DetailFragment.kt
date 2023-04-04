@@ -22,6 +22,7 @@ class DetailFragment : Fragment() {
 
 
      var hero_id: Int = 0
+     var movie_id: Int = 0
 
     private var _binding : FragmentDetailBinding? = null
     private  val binding get() = _binding !!
@@ -35,7 +36,7 @@ class DetailFragment : Fragment() {
 
             return
         }
-        hero_id = DetailFragmentArgs.fromBundle(bundle).heroId
+        movie_id = DetailFragmentArgs.fromBundle(bundle).movieId
 
     }
     override fun onCreateView(
@@ -48,13 +49,26 @@ class DetailFragment : Fragment() {
         return view
     }
 
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        binding.name.text = heroList.get(hero_id).name
+//        binding.realName.text = heroList.get(hero_id).realname
+//        binding.bio.text = heroList.get(hero_id).bio
+//        binding.firstApperance.text = heroList.get(hero_id).firstappearance
+//        Glide.with(requireContext()).load(heroList.get(hero_id).imageurl)
+//            .apply(RequestOptions().centerCrop())
+//            .into(binding.itemImage)
+//
+//    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.name.text = heroList.get(hero_id).name
-        binding.realName.text = heroList.get(hero_id).realname
-        binding.bio.text = heroList.get(hero_id).bio
-        binding.firstApperance.text = heroList.get(hero_id).firstappearance
-        Glide.with(requireContext()).load(heroList.get(hero_id).imageurl)
+        System.out.println(movieList.get(movie_id).title)
+        binding.name.text = movieList.get(movie_id).title
+        binding.rating.text = movieList.get(movie_id).rating
+        binding.description.text = movieList.get(movie_id).description
+        binding.year.text = movieList.get(movie_id).year.toString()
+        Glide.with(requireContext()).load(movieList.get(movie_id).thumbnail)
             .apply(RequestOptions().centerCrop())
             .into(binding.itemImage)
 

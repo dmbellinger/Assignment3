@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 var heroList : ArrayList<Hero> = ArrayList()
-var movieList : ArrayList<Movie> = ArrayList()
+var movieList : ArrayList<MoviesItem> = ArrayList()
 
 class RecyclerAdapter(val context: Context,  var navController: NavController) : RecyclerView.Adapter<RecyclerAdapter.MyViewHolder>() {
 
@@ -26,17 +26,21 @@ class RecyclerAdapter(val context: Context,  var navController: NavController) :
     }
 
     override fun getItemCount(): Int {
-        return heroList.size
+//        return heroList.size
+        return movieList.size
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
-
             holder.bind(position)
     }
 
-    fun setHerosListItems(heroListparam: ArrayList<Hero>){
-        heroList = heroListparam;
+//    fun setHerosListItems(heroListparam: ArrayList<Hero>){
+//        heroList = heroListparam;
+//        notifyDataSetChanged()
+//    }
+
+    fun setMovieListItems(movieListparam: ArrayList<MoviesItem>){
+        movieList = movieListparam;
         notifyDataSetChanged()
     }
 
@@ -55,9 +59,14 @@ class RecyclerAdapter(val context: Context,  var navController: NavController) :
         }
         fun bind(position:Int){
             pos = position
-            val currHero = heroList.get(position)
-            title.text = currHero.name
-            Glide.with(context).load(currHero.imageurl)
+//            val currHero = heroList.get(position)
+            val currMovie = movieList.get(position)
+//            title.text = currHero.name
+//            Glide.with(context).load(currHero.imageurl)
+//                .apply(RequestOptions().centerCrop())
+//                .into(image)
+            title.text = currMovie.title
+            Glide.with(context).load(currMovie.thumbnail)
                 .apply(RequestOptions().centerCrop())
                 .into(image)
         }

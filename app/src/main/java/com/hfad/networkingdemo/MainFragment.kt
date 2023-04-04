@@ -31,6 +31,34 @@ class MainFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        recyclerView = view.findViewById(R.id.recyclerview)
+//        recyclerAdapter = RecyclerAdapter(requireContext(), Navigation.findNavController(view))
+//        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+//        recyclerView.adapter = recyclerAdapter
+//
+//        val apiInterface = ApiInterface.create().getHeros()
+//
+//        if (apiInterface != null) {
+//            apiInterface.enqueue(object: Callback<ArrayList<Hero?>?>{
+//                override fun onResponse(
+//                    call: Call<ArrayList<Hero?>?>,
+//                    response: Response<ArrayList<Hero?>?>
+//                ){
+//                    if (response?.body() != null)
+//                        recyclerAdapter.setHerosListItems(response.body() !! as ArrayList<Hero>)
+//                }
+//
+//                override fun onFailure(call: Call<ArrayList<Hero?>?>, t: Throwable){
+//                    if (t != null)
+//                        t.message?.let { Log.d("onFailure", it) }
+//                }
+//            })
+//        }
+//
+//        }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerView = view.findViewById(R.id.recyclerview)
@@ -38,25 +66,25 @@ class MainFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = recyclerAdapter
 
-        val apiInterface = ApiInterface.create().getHeros()
+        val apiInterface = APIInterface2.create().getMovies()
 
         if (apiInterface != null) {
-            apiInterface.enqueue(object: Callback<ArrayList<Hero?>?>{
+            apiInterface.enqueue(object: Callback<ArrayList<MoviesItem?>?>{
                 override fun onResponse(
-                    call: Call<ArrayList<Hero?>?>,
-                    response: Response<ArrayList<Hero?>?>
+                    call: Call<ArrayList<MoviesItem?>?>,
+                    response: Response<ArrayList<MoviesItem?>?>
                 ){
                     if (response?.body() != null)
-                        recyclerAdapter.setHerosListItems(response.body() !! as ArrayList<Hero>)
+                        recyclerAdapter.setMovieListItems(response.body() !! as ArrayList<MoviesItem>)
                 }
 
-                override fun onFailure(call: Call<ArrayList<Hero?>?>, t: Throwable){
+                override fun onFailure(call: Call<ArrayList<MoviesItem?>?>, t: Throwable){
                     if (t != null)
                         t.message?.let { Log.d("onFailure", it) }
                 }
             })
         }
 
-        }
-
     }
+
+}
