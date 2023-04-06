@@ -1,4 +1,7 @@
 package com.hfad.networkingdemo
+// Dylan Bellinger and Steven Griffin
+// Assignment 3
+// 4/6/2023
 
 import android.os.Bundle
 import android.util.Log
@@ -21,7 +24,7 @@ import com.hfad.networkingdemo.databinding.FragmentDetailBinding
 class DetailFragment : Fragment() {
 
 
-     var hero_id: Int = 0
+     //ID variable
      var movie_id: Int = 0
 
     private var _binding : FragmentDetailBinding? = null
@@ -49,17 +52,6 @@ class DetailFragment : Fragment() {
         return view
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        binding.name.text = heroList.get(hero_id).name
-//        binding.realName.text = heroList.get(hero_id).realname
-//        binding.bio.text = heroList.get(hero_id).bio
-//        binding.firstApperance.text = heroList.get(hero_id).firstappearance
-//        Glide.with(requireContext()).load(heroList.get(hero_id).imageurl)
-//            .apply(RequestOptions().centerCrop())
-//            .into(binding.itemImage)
-//
-//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

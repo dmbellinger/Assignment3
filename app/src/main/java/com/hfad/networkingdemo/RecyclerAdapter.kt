@@ -1,5 +1,7 @@
 package com.hfad.networkingdemo
-
+// Dylan Bellinger and Steven Griffin
+// Assignment 3
+// 4/6/2023
 import android.content.Context
 
 import android.view.LayoutInflater
@@ -34,11 +36,7 @@ class RecyclerAdapter(val context: Context,  var navController: NavController) :
             holder.bind(position)
     }
 
-//    fun setHerosListItems(heroListparam: ArrayList<Hero>){
-//        heroList = heroListparam;
-//        notifyDataSetChanged()
-//    }
-
+    //Setting item list
     fun setMovieListItems(movieListparam: ArrayList<MoviesItem>){
         movieList = movieListparam;
         notifyDataSetChanged()
@@ -59,12 +57,7 @@ class RecyclerAdapter(val context: Context,  var navController: NavController) :
         }
         fun bind(position:Int){
             pos = position
-//            val currHero = heroList.get(position)
             val currMovie = movieList.get(position)
-//            title.text = currHero.name
-//            Glide.with(context).load(currHero.imageurl)
-//                .apply(RequestOptions().centerCrop())
-//                .into(image)
             title.text = currMovie.title
             Glide.with(context).load(currMovie.thumbnail)
                 .apply(RequestOptions().centerCrop())

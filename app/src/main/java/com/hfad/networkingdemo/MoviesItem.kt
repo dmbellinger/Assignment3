@@ -1,5 +1,9 @@
 package com.hfad.networkingdemo
+// Dylan Bellinger and Steven Griffin
+// Assignment 3
+// 4/6/2023
 
+//Movie data class
 data class MoviesItem(
     val description: String,
     val director: List<String>,

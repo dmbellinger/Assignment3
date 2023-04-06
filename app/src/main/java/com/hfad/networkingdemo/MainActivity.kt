@@ -1,5 +1,7 @@
 package com.hfad.networkingdemo
-
+// Dylan Bellinger and Steven Griffin
+// Assignment 3
+// 4/6/2023
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
