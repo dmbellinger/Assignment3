@@ -9,13 +9,14 @@ import retrofit2.http.GET
 import retrofit2.http.Headers
 
 interface APIInterface2 {
-    @GET("imdb-top-100-movies/")
+    //@GET("imdb-top-100-movies/")
+    @GET("Top 100 movies list")
     @Headers("X-RapidAPI-Key:e506080d5cmsh9c4350d94622d47p1b39b5jsn0495f2405d5f", "X-RapidAPI-Host:imdb-top-100-movies.p.rapidapi.com")
     fun getMovies() : Call<ArrayList<MoviesItem?>?>?
 
     companion object{
-        var BASE_URL = "https://rapidapi.com/rapihub-rapihub-default/api/"
-
+        //var BASE_URL = "https://rapidapi.com/rapihub-rapihub-default/api/"
+        var BASE_URL = "https://imdb-top-100-movies.p.rapidapi.com/"
         fun create(): APIInterface2{
 
             val retrofit = Retrofit.Builder()
